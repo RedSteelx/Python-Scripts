@@ -1,0 +1,77 @@
+import requests
+from aws_requests_auth.aws_auth import AWSRequestsAuth
+from elasticsearch import Elasticsearch, RequestsHttpConnection
+#https://stackoverflow.com/questions/38144273/making-a-signed-http-request-to-aws-elasticsearch-in-python
+#elasticsearch-vpc-endpoint
+import boto3
+
+
+# let's talk to our AWS Elasticsearch cluster
+auth = AWSRequestsAuth(aws_access_key='',
+                       aws_secret_access_key='',
+                       aws_host='',
+                       aws_region='us-east-1',
+                       aws_service='es')
+
+
+
+
+
+
+#Sha
+response = requests.get('elasticsearch-vpc-endpoint/_cat/indices',auth=auth)
+
+#Sharde Sizes
+#params = (
+#    ('v', 'true'),
+#    ('h', 'index,prirep,shard,store'),
+#    ('s', 'prirep,store'),
+#    ('bytes', 'gb'),
+#    ('pretty', ''),
+#)
+
+#response = requests.get('elasticsearch-vpc-endpoint/_cat/shards', params=params, auth=auth)
+
+
+#Health Check
+
+#params = (
+#    ('pretty', ''),
+#)
+
+#response = requests.get('elasticsearch-vpc-endpoint/_cluster/health', params=params, auth=auth)
+
+
+#Unassigned Shards
+#params = (
+#    ('h', 'index,shard,prirep,state,unassigned.reason'),
+#)
+
+#response = requests.get('elasticsearch-vpc-endpoint/_cat/shards', params=params, auth=auth)
+
+
+#Random Index explain why unassigned
+#params = (
+#    ('pretty', ''),
+#)
+
+#response = requests.get('elasticsearch-vpc-endpoint/_cluster/allocation/explain', params=params, auth=auth)
+
+
+#Increase retries
+#import requests
+
+#headers = {
+#    'Content-Type': 'application/json',
+#}
+
+#data = '{ "index.allocation.max_retries": 6}'
+
+#response = requests.put('elasticsearch-vpc-endpoint/event-1-000001/_settings', headers=headers, data=data, auth=auth)
+
+print (response.json())
+#print (response.content)
+print('')
+
+
+

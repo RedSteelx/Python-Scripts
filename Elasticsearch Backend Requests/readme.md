@@ -1,0 +1,1 @@
+This script allows me to access the backend of Opensearch/Elasticsearch without the use of the developer tools in Kibana. It was used for fixing the health of Elasticsearch when we didnt have access to Kibana.

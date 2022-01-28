@@ -1,0 +1,1 @@
+This was created to pull information on who did vs didn't click on a phishing campaign from KnowBe4. We were sending congratulation messages and fun failure messages as apart of having fun with the company. 
